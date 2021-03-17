@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">Calculator</string>
-    <string name="back">BACK</string>
     <string name="raise_to">^</string>
     <string name="ac">AC</string>
     <string name="divide">/</string>
     <string name="doc_string">.</string>
-    <string name="ans">ANS</string>
+    <string name="ans">=</string>
     <string name="_0">0</string>
     <string name="_1">1</string>
     <string name="_2">2</string>
@@ -19,5 +18,7 @@
     <string name="multiplication_string">*</string>
     <string name="subtraction">-</string>
     <string name="addition">+</string>
+    <string name="openBracket">(</string>
+    <string name="closeBracket">)</string>
     <string name="calculator_app">Calculator App</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.example.calculator.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,11 +7,17 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.calculator.R;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class HomeActivity extends AppCompatActivity {
     TextView answer_tv;
     Button zeroBtn, oneBtn, twoBtn, threeBtn, fourBtn, fiveBtn, sixBtn, sevenBtn, eightBtn, nineBtn, allClearBtn,
-            answerBtn, backBtn, addBtn, subBtn, mulBtn, divBtn, dotBtn;
+            answerBtn, openBracket, closeBracket, addBtn, subBtn, mulBtn, divBtn, dotBtn;
     String result;
     String tmp;
     String operator;
@@ -35,7 +41,8 @@ public class HomeActivity extends AppCompatActivity {
         nineBtn = (Button) findViewById(R.id.nineBtn);
         allClearBtn = (Button) findViewById(R.id.allclearbtn);
         answerBtn = (Button) findViewById(R.id.answerBtn);
-        backBtn = (Button) findViewById(R.id.backBtn);
+        openBracket = (Button)findViewById(R.id.openBracketBtn);
+        closeBracket = (Button)findViewById(R.id.closeBracketBtn);
         addBtn = (Button) findViewById(R.id.additionBtn);
         subBtn = (Button) findViewById(R.id.subtractBtn);
         mulBtn = (Button) findViewById(R.id.multiplicationBtn);
@@ -164,7 +171,8 @@ public class HomeActivity extends AppCompatActivity {
                     res = number * number2;
                     break;
             }
-            result = String.valueOf(res);
+            float rounded_value=roundFloat(res, 2);
+            result = String.valueOf(rounded_value);
             answer_tv.setText(result);
         }
         catch (Exception e) {
@@ -187,5 +195,11 @@ public class HomeActivity extends AppCompatActivity {
         result = answer_tv.getText().toString();
         result = result + pos;
         answer_tv.setText(result);
+    }
+
+    private static float roundFloat(float f, int places) {
+        BigDecimal bigDecimal = new BigDecimal(Float.toString(f));
+        bigDecimal = bigDecimal.setScale(places, RoundingMode.HALF_UP);
+        return bigDecimal.floatValue();
     }
 }

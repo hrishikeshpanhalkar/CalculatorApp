@@ -9,68 +9,18 @@
     android:padding="10dp"
     android:weightSum="6"
     android:background="@color/black"
-    tools:context=".HomeActivity">
+    tools:context=".activities.HomeActivity">
 
     <TextView
         android:id="@+id/answer_tv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
+        android:maxLength="10"
         android:background="@color/white"
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="30sp"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="10dp"
-        android:weightSum="4"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/allclearbtn"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/btn_bg"
-            android:text="@string/ac"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
-
-
-        <Button
-            android:id="@+id/backBtn"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:background="@drawable/btn_bg"
-            android:text="@string/back"
-            android:layout_marginStart="10dp"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
-
-        <Button
-            android:id="@+id/divisionBtn"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:layout_marginStart="10dp"
-            android:background="@drawable/btn_circular"
-            android:text="@string/divide"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -122,18 +72,17 @@
             android:textColor="@color/black"/>
 
         <Button
-            android:id="@+id/multiplicationBtn"
-            android:clickable="true"
-            android:focusable="true"
+            android:id="@+id/additionBtn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginStart="10dp"
             android:background="@drawable/btn_circular"
-            android:text="@string/multiplication_string"
+            android:text="@string/addition"
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -198,6 +147,7 @@
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -250,16 +200,19 @@
             android:textColor="@color/black" />
 
         <Button
-            android:id="@+id/additionBtn"
+            android:id="@+id/multiplicationBtn"
+            android:clickable="true"
+            android:focusable="true"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginStart="10dp"
             android:background="@drawable/btn_circular"
-            android:text="@string/addition"
+            android:text="@string/multiplication_string"
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
+
     </LinearLayout>
 
     <LinearLayout
@@ -276,24 +229,9 @@
             android:focusable="true"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/btn_bg"
-            android:text="@string/_0"
-            android:textSize="30sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
-
-
-        <Button
-            android:id="@+id/answerBtn"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
             android:layout_weight="2"
             android:background="@drawable/btn_bg"
-            android:text="@string/ans"
-            android:layout_marginStart="10dp"
+            android:text="@string/_0"
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
@@ -306,11 +244,92 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:layout_marginStart="10dp"
-            android:background="@drawable/btn_circular"
+            android:background="@drawable/btn_bg"
             android:text="@string/doc_string"
             android:textSize="30sp"
             android:textStyle="bold"
             android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/divisionBtn"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/btn_circular"
+            android:text="@string/divide"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="10dp"
+        android:weightSum="4"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/allclearbtn"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_circular"
+            android:text="@string/ac"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/openBracketBtn"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_circular"
+            android:text="@string/openBracket"
+            android:layout_marginStart="10dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/closeBracketBtn"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_circular"
+            android:text="@string/closeBracket"
+            android:layout_marginStart="10dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:id="@+id/answerBtn"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/btn_circular"
+            android:text="@string/ans"
+            android:layout_marginStart="10dp"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+
     </LinearLayout>
 
 </LinearLayout>
